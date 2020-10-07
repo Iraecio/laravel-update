@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Models;
 
-use Iraecio\Updater\Traits\SupportPrivateAccessToken;
 use Exception;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
+use Iraecio\Updater\Traits\SupportPrivateAccessToken;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Finder\Finder;
 
@@ -102,7 +102,7 @@ final class Release
     {
         $this->storagePath = $storagePath;
 
-        if (! $this->filesystem->exists($this->storagePath)) {
+        if (!$this->filesystem->exists($this->storagePath)) {
             $this->filesystem->makeDirectory($this->storagePath, 493, true, true);
         }
 
@@ -116,7 +116,7 @@ final class Release
      */
     public function updateStoragePath(): self
     {
-        if (! empty($this->getRelease())) {
+        if (!empty($this->getRelease())) {
             $this->storagePath = Str::finish($this->storagePath, DIRECTORY_SEPARATOR).$this->getRelease();
 
             return $this;
@@ -135,7 +135,7 @@ final class Release
 
     /**
      * @param string $updatePath
-     * @param array $excluded
+     * @param array  $excluded
      *
      * @return Release
      */
@@ -238,7 +238,7 @@ final class Release
             'GET',
             $this->getDownloadUrl(),
             [
-                'sink' => $this->getStoragePath(),
+                'sink'    => $this->getStoragePath(),
                 'headers' => $headers,
             ]
         );
@@ -257,10 +257,11 @@ final class Release
         if (count($folders) === 1) {
             // Only one sub-folder inside extracted directory
             $moved = $this->filesystem->moveDirectory(
-                $folders[0], createFolderFromFile($this->getStoragePath()).now()->toDateString()
+                $folders[0],
+                createFolderFromFile($this->getStoragePath()).now()->toDateString()
             );
 
-            if (! $moved) {
+            if (!$moved) {
                 return false;
             }
 
@@ -285,14 +286,14 @@ final class Release
         $extractionDir = createFolderFromFile($this->getStoragePath());
 
         // Check if source archive is (probably) deleted but extracted folder is there.
-        if (! $this->filesystem->exists($this->getStoragePath())
+        if (!$this->filesystem->exists($this->getStoragePath())
             && $this->filesystem->exists($extractionDir)) {
             return true;
         }
 
         // Check if source archive is there but not extracted
         if ($this->filesystem->exists($this->getStoragePath())
-            && ! $this->filesystem->exists($extractionDir)) {
+            && !$this->filesystem->exists($extractionDir)) {
             return true;
         }
 

@@ -2,12 +2,12 @@
 
 namespace Iraecio\Updater;
 
+use Illuminate\Support\Facades\Artisan;
 use Iraecio\Updater\Contracts\SourceRepositoryTypeContract;
 use Iraecio\Updater\Models\Release;
 use Iraecio\Updater\Models\UpdateExecutor;
 use Iraecio\Updater\Traits\SupportPrivateAccessToken;
 use Iraecio\Updater\Traits\UseVersionFile;
-use Illuminate\Support\Facades\Artisan;
 
 /**
  * SourceRepository.
@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Artisan;
  */
 final class SourceRepository implements SourceRepositoryTypeContract
 {
-    use UseVersionFile, SupportPrivateAccessToken;
+    use UseVersionFile;
+    use SupportPrivateAccessToken;
 
     /**
      * @var SourceRepositoryTypeContract
@@ -57,8 +58,9 @@ final class SourceRepository implements SourceRepositoryTypeContract
     /**
      * @param Release $release
      *
-     * @return bool
      * @throws \Exception
+     *
+     * @return bool
      */
     public function update(Release $release): bool
     {

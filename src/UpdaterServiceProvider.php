@@ -2,6 +2,11 @@
 
 namespace Iraecio\Updater;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\ServiceProvider;
 use Iraecio\Updater\Commands\CheckForUpdate;
 use Iraecio\Updater\Contracts\SourceRepositoryTypeContract;
 use Iraecio\Updater\Models\Release;
@@ -11,11 +16,6 @@ use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
 use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubBranchType;
 use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
 use Iraecio\Updater\SourceRepositoryTypes\HttpRepositoryType;
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\ServiceProvider;
 
 /**
  * UpdaterServiceProvider.php.
