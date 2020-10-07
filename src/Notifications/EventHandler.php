@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Notifications;
 
-use Iraecio\Updater\Events\UpdateAvailable;
-use Iraecio\Updater\Events\UpdateFailed;
-use Iraecio\Updater\Events\UpdateSucceeded;
 use Exception;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Notifications\Notification;
+use Iraecio\Updater\Events\UpdateAvailable;
+use Iraecio\Updater\Events\UpdateFailed;
+use Iraecio\Updater\Events\UpdateSucceeded;
 
 final class EventHandler
 {
@@ -50,7 +50,7 @@ final class EventHandler
                 return $notificationName === $eventName;
             });
 
-        if (! $notificationClass) {
+        if (!$notificationClass) {
             throw new Exception('Notification could not be sent.');
         }
 

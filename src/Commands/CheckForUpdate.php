@@ -2,8 +2,8 @@
 
 namespace Iraecio\Updater\Commands;
 
-use Iraecio\Updater\UpdaterManager;
 use Illuminate\Console\Command;
+use Iraecio\Updater\UpdaterManager;
 
 class CheckForUpdate extends Command
 {

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater;
 
+use Exception;
+use Illuminate\Foundation\Application;
+use InvalidArgumentException;
 use Iraecio\Updater\Contracts\SourceRepositoryTypeContract;
 use Iraecio\Updater\Contracts\UpdaterContract;
 use Iraecio\Updater\Models\UpdateExecutor;
 use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
 use Iraecio\Updater\SourceRepositoryTypes\HttpRepositoryType;
-use Exception;
-use Illuminate\Foundation\Application;
-use InvalidArgumentException;
 
 /**
  * UpdaterManager.
@@ -133,8 +133,9 @@ final class UpdaterManager implements UpdaterContract
     }
 
     /**
-     * @return SourceRepositoryTypeContract
      * @throws Exception
+     *
+     * @return SourceRepositoryTypeContract
      */
     protected function createGithubRepository(): SourceRepositoryTypeContract
     {

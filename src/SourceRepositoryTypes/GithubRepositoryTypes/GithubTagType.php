@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes;
 
-use Iraecio\Updater\Contracts\SourceRepositoryTypeContract;
-use Iraecio\Updater\Models\Release;
-use Iraecio\Updater\Models\UpdateExecutor;
-use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
 use Exception;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Iraecio\Updater\Contracts\SourceRepositoryTypeContract;
+use Iraecio\Updater\Models\Release;
+use Iraecio\Updater\Models\UpdateExecutor;
+use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
 use Psr\Http\Message\ResponseInterface;
 
 final class GithubTagType extends GithubRepositoryType implements SourceRepositoryTypeContract
@@ -44,10 +44,11 @@ final class GithubTagType extends GithubRepositoryType implements SourceReposito
      * Example: 2.6.5 or v2.6.5.
      *
      * @param string $prepend Prepend a string to the latest version
-     * @param string $append Append a string to the latest version
+     * @param string $append  Append a string to the latest version
+     *
+     * @throws Exception
      *
      * @return string
-     * @throws Exception
      */
     public function getVersionAvailable(string $prepend = '', string $append = ''): string
     {
@@ -68,9 +69,10 @@ final class GithubTagType extends GithubRepositoryType implements SourceReposito
      *
      * @param string $version
      *
+     * @throws Exception
+     * @throws Exception
+     *
      * @return Release
-     * @throws Exception
-     * @throws Exception
      */
     public function fetch($version = ''): Release
     {
@@ -88,7 +90,7 @@ final class GithubTagType extends GithubRepositoryType implements SourceReposito
                       ->updateStoragePath()
                       ->setDownloadUrl($release->zipball_url);
 
-        if (! $this->release->isSourceAlreadyFetched()) {
+        if (!$this->release->isSourceAlreadyFetched()) {
             $this->release->download($this->client);
             $this->release->extract();
         }
@@ -100,7 +102,7 @@ final class GithubTagType extends GithubRepositoryType implements SourceReposito
     {
         $release = $collection->first();
 
-        if (! empty($version)) {
+        if (!empty($version)) {
             if ($collection->contains('tag_name', $version)) {
                 $release = $collection->where('tag_name', $version)->first();
             } else {

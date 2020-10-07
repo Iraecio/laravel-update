@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
 
-if (! \function_exists('dirsIntersect')) {
+if (!\function_exists('dirsIntersect')) {
     /**
      * Check if files in one array (i. e. directory) are also exist in a second one.
      *
@@ -20,7 +20,7 @@ if (! \function_exists('dirsIntersect')) {
     }
 }
 
-if (! \function_exists('checkPermissions')) {
+if (!\function_exists('checkPermissions')) {
     /**
      * Check a given directory recursively if all files are writeable.
      *
@@ -42,7 +42,7 @@ if (! \function_exists('checkPermissions')) {
     }
 }
 
-if (! \function_exists('createFolderFromFile')) {
+if (!\function_exists('createFolderFromFile')) {
     /**
      * Create a folder name including path from a given file.
      * Input: /tmp/my_zip_file.zip

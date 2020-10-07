@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Notifications\Notifications;
 
+use Illuminate\Notifications\Messages\MailMessage;
 use Iraecio\Updater\Events\UpdateAvailable as UpdateAvailableEvent;
 use Iraecio\Updater\Notifications\BaseNotification;
-use Illuminate\Notifications\Messages\MailMessage;
 
 final class UpdateAvailable extends BaseNotification
 {

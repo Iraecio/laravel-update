@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Models;
 
-use Iraecio\Updater\Events\UpdateFailed;
-use Iraecio\Updater\Events\UpdateSucceeded;
-use Iraecio\Updater\Traits\UseVersionFile;
 use Exception;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Iraecio\Updater\Events\UpdateFailed;
+use Iraecio\Updater\Events\UpdateSucceeded;
+use Iraecio\Updater\Traits\UseVersionFile;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -47,8 +47,9 @@ final class UpdateExecutor
     /**
      * @param Release $release
      *
-     * @return bool
      * @throws Exception
+     *
+     * @return bool
      */
     public function run(Release $release): bool
     {
@@ -87,7 +88,8 @@ final class UpdateExecutor
         collect($files)->each(function (SplFileInfo $file) {
             if ($file->getRealPath()) {
                 File::copy(
-                    $file->getRealPath(), Str::finish($this->basePath, DIRECTORY_SEPARATOR).$file->getFilename()
+                    $file->getRealPath(),
+                    Str::finish($this->basePath, DIRECTORY_SEPARATOR).$file->getFilename()
                 );
             }
         });
@@ -102,7 +104,7 @@ final class UpdateExecutor
         }));
 
         $sorted->each(function (SplFileInfo $directory) {
-            if (! dirsIntersect(File::directories($directory->getRealPath()), config('self-update.exclude_folders'))) {
+            if (!dirsIntersect(File::directories($directory->getRealPath()), config('self-update.exclude_folders'))) {
                 File::copyDirectory(
                     $directory->getRealPath(),
                     Str::finish($this->basePath, DIRECTORY_SEPARATOR).Str::finish($directory->getRelativePath(), DIRECTORY_SEPARATOR).$directory->getBasename()
