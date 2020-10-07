@@ -1,11 +1,13 @@
+# Origins of Repository
+This repo is a copy of [codedge/laravel-selfupdater](https://github.com/codedge/laravel-selfupdater).
 # Laravel Application Self-Updater
 
-[![Latest Stable Version](https://poser.pugx.org/codedge/laravel-selfupdater/v/stable?format=flat-square)](https://packagist.org/packages/codedge/laravel-selfupdater)
-[![Total Downloads](https://poser.pugx.org/codedge/laravel-selfupdater/downloads?format=flat-square)](https://packagist.org/packages/codedge/laravel-selfupdater)
-[![](https://github.com/codedge/laravel-selfupdater/workflows/Tests/badge.svg)](https://github.com/codedge/laravel-selfupdater/actions)
+[![Latest Stable Version](https://poser.pugx.org/iraecio/laravel-update/v/stable?format=flat-square)](https://packagist.org/packages/iraecio/laravel-update)
+[![Total Downloads](https://poser.pugx.org/iraecio/laravel-update/downloads?format=flat-square)](https://packagist.org/packages/iraecio/laravel-update)
+[![](https://github.com/iraecio/laravel-update/workflows/Tests/badge.svg)](https://github.com/iraecio/laravel-update/actions)
 [![StyleCI](https://styleci.io/repos/64463948/shield)](https://styleci.io/repos/64463948)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd836e58656b4e25b34b2a4ac8197142)](https://www.codacy.com/app/codedge/laravel-selfupdater?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codedge/laravel-selfupdater)
-[![codecov](https://codecov.io/gh/codedge/laravel-selfupdater/branch/master/graph/badge.svg)](https://codecov.io/gh/codedge/laravel-selfupdater)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd836e58656b4e25b34b2a4ac8197142)](https://www.codacy.com/app/iraecio/laravel-update?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=iraecio/laravel-update)
+[![codecov](https://codecov.io/gh/iraecio/laravel-update/branch/master/graph/badge.svg)](https://codecov.io/gh/iraecio/laravel-update)
 
 This package provides some basic methods to implement a self updating
 functionality for your Laravel 5 application. Already bundled are some
@@ -16,14 +18,14 @@ that needs some updating mechanism without [Composer](https://getcomposer.org/).
 
 ## Compatibility
 
-* PHP: 7.3 & 7.4
-* Laravel: 6.x & 7.x
+* PHP: 7.4
+* Laravel: >= 7.x
   
 ## Install
 
 To install the latest version from the master using [Composer](https://getcomposer.org/):
 ```sh
-$ composer require codedge/laravel-selfupdater
+$ composer require iraecio/laravel-update
 ```
 
 ## Configuration

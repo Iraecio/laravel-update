@@ -98,11 +98,10 @@ final class GithubBranchType extends GithubRepositoryType implements SourceRepos
 
     protected function getRepositoryReleases(): ResponseInterface
     {
-        $url = DIRECTORY_SEPARATOR.'repos'
-               .DIRECTORY_SEPARATOR.$this->config['repository_vendor']
-               .DIRECTORY_SEPARATOR.$this->config['repository_name']
-               .DIRECTORY_SEPARATOR.'commits'
-               .'?sha='.$this->config['use_branch'];
+        $url = '/repos'
+               .'/'.$this->config['repository_vendor']
+               .'/'.$this->config['repository_name']
+               .'/'.'commits?sha='.$this->config['use_branch'];
 
         $headers = [];
 
@@ -117,10 +116,9 @@ final class GithubBranchType extends GithubRepositoryType implements SourceRepos
 
     private function generateArchiveUrl(string $name): string
     {
-        return DIRECTORY_SEPARATOR.'repos'
-               .DIRECTORY_SEPARATOR.$this->config['repository_vendor']
-               .DIRECTORY_SEPARATOR.$this->config['repository_name']
-               .DIRECTORY_SEPARATOR.'zipball'
-               .DIRECTORY_SEPARATOR.$name;
+        return '/repos'
+               .'/'.$this->config['repository_vendor']
+               .'/'.$this->config['repository_name']
+               .'/zipball/'.$name;
     }
 }
