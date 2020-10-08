@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Tests\Notifications;
 
+use Illuminate\Support\Facades\Notification;
 use Iraecio\Updater\Events\UpdateFailed;
 use Iraecio\Updater\Models\Release;
 use Iraecio\Updater\Notifications\Notifiable;
 use Iraecio\Updater\Notifications\Notifications\UpdateFailed as UpdateFailedNotification;
 use Iraecio\Updater\Tests\TestCase;
-use Illuminate\Support\Facades\Notification;
 
 class EventHandlerTest extends TestCase
 {

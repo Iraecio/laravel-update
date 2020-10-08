@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Tests\Commands;
 
+use GuzzleHttp\Client;
 use Iraecio\Updater\Commands\CheckForUpdate;
 use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
 use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
 use Iraecio\Updater\Tests\TestCase;
-use GuzzleHttp\Client;
 
 final class CheckUpdateTest extends TestCase
 {

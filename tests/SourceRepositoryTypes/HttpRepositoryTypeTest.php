@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\SourceRepositoryTypes;
 
-use Iraecio\Updater\Models\Release;
-use Iraecio\Updater\Tests\TestCase;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
+use Iraecio\Updater\Models\Release;
+use Iraecio\Updater\Tests\TestCase;
 
 class HttpRepositoryTypeTest extends TestCase
 {
