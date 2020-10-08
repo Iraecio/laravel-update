@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests\Hooks;
+namespace Iraecio\Updater\Tests\Hooks;
 
 use DG\BypassFinals;
 use PHPUnit\Runner\BeforeTestHook;

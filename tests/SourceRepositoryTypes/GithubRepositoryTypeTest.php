@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests\SourceRepositoryTypes;
+namespace Iraecio\Updater\Tests\SourceRepositoryTypes;
 
-use Codedge\Updater\Events\UpdateAvailable;
-use Codedge\Updater\Events\UpdateSucceeded;
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryType;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubBranchType;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
-use Codedge\Updater\Tests\TestCase;
+use Iraecio\Updater\Events\UpdateAvailable;
+use Iraecio\Updater\Events\UpdateSucceeded;
+use Iraecio\Updater\Models\Release;
+use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
+use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubBranchType;
+use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
+use Iraecio\Updater\Tests\TestCase;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Event;

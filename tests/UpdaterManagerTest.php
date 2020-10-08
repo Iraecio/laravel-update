@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests;
+namespace Iraecio\Updater\Tests;
 
-use Codedge\Updater\SourceRepository;
-use Codedge\Updater\UpdaterManager;
+use Iraecio\Updater\SourceRepository;
+use Iraecio\Updater\UpdaterManager;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
 

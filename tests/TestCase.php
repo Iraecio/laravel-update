@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests;
+namespace Iraecio\Updater\Tests;
 
-use Codedge\Updater\UpdaterFacade;
-use Codedge\Updater\UpdaterServiceProvider;
+use Iraecio\Updater\UpdaterFacade;
+use Iraecio\Updater\UpdaterServiceProvider;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;

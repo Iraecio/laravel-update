@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests\Notifications;
+namespace Iraecio\Updater\Tests\Notifications;
 
-use Codedge\Updater\Events\UpdateFailed;
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\Notifications\Notifiable;
-use Codedge\Updater\Notifications\Notifications\UpdateFailed as UpdateFailedNotification;
-use Codedge\Updater\Tests\TestCase;
+use Iraecio\Updater\Events\UpdateFailed;
+use Iraecio\Updater\Models\Release;
+use Iraecio\Updater\Notifications\Notifiable;
+use Iraecio\Updater\Notifications\Notifications\UpdateFailed as UpdateFailedNotification;
+use Iraecio\Updater\Tests\TestCase;
 use Illuminate\Support\Facades\Notification;
 
 class EventHandlerTest extends TestCase

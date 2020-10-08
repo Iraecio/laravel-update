@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests;
+namespace Iraecio\Updater\Tests;
 
-use Codedge\Updater\UpdaterFacade;
-use Codedge\Updater\UpdaterManager;
+use Iraecio\Updater\UpdaterFacade;
+use Iraecio\Updater\UpdaterManager;
 
 final class UpdaterFacadeTest extends TestCase
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests\Models;
+namespace Iraecio\Updater\Tests\Models;
 
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\Tests\TestCase;
+use Iraecio\Updater\Models\Release;
+use Iraecio\Updater\Tests\TestCase;
 use Illuminate\Support\Str;
 use org\bovigo\vfs\vfsStream;
 

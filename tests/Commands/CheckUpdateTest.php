@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests\Commands;
+namespace Iraecio\Updater\Tests\Commands;
 
-use Codedge\Updater\Commands\CheckForUpdate;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryType;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
-use Codedge\Updater\Tests\TestCase;
+use Iraecio\Updater\Commands\CheckForUpdate;
+use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
+use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
+use Iraecio\Updater\Tests\TestCase;
 use GuzzleHttp\Client;
 
 final class CheckUpdateTest extends TestCase

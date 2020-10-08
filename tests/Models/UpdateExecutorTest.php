@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Tests\Models;
+namespace Iraecio\Updater\Tests\Models;
 
-use Codedge\Updater\Events\UpdateFailed;
-use Codedge\Updater\Events\UpdateSucceeded;
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\Models\UpdateExecutor;
-use Codedge\Updater\Tests\TestCase;
+use Iraecio\Updater\Events\UpdateFailed;
+use Iraecio\Updater\Events\UpdateSucceeded;
+use Iraecio\Updater\Models\Release;
+use Iraecio\Updater\Models\UpdateExecutor;
+use Iraecio\Updater\Tests\TestCase;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\File;
 use org\bovigo\vfs\vfsStream;
