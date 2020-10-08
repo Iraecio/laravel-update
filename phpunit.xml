@@ -11,7 +11,7 @@
          stopOnFailure="true">
 
     <extensions>
-        <extension class="Codedge\Updater\Tests\Hooks\BypassFinalHook"/>
+        <extension class="Iraecio\Updater\Tests\Hooks\BypassFinalHook"/>
     </extensions>
 
     <testsuites>
