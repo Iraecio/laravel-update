@@ -54,7 +54,7 @@ final class GithubBranchType extends GithubRepositoryType implements SourceRepos
                       ->updateStoragePath()
                       ->setDownloadUrl($this->generateArchiveUrl($release->sha));
 
-        if (!$this->release->isSourceAlreadyFetched()) {
+        if (! $this->release->isSourceAlreadyFetched()) {
             $this->release->download($this->client);
             $this->release->extract();
         }
@@ -72,7 +72,7 @@ final class GithubBranchType extends GithubRepositoryType implements SourceRepos
     {
         $release = $collection->first();
 
-        if (!empty($version)) {
+        if (! empty($version)) {
             if ($collection->contains('commit.author.date', $version)) {
                 $release = $collection->where('commit.author.date', $version)->first();
             } else {

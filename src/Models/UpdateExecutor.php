@@ -104,7 +104,7 @@ final class UpdateExecutor
         }));
 
         $sorted->each(function (SplFileInfo $directory) {
-            if (!dirsIntersect(File::directories($directory->getRealPath()), config('self-update.exclude_folders'))) {
+            if (! dirsIntersect(File::directories($directory->getRealPath()), config('self-update.exclude_folders'))) {
                 File::copyDirectory(
                     $directory->getRealPath(),
                     Str::finish($this->basePath, DIRECTORY_SEPARATOR).Str::finish($directory->getRelativePath(), DIRECTORY_SEPARATOR).$directory->getBasename()

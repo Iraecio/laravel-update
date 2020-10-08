@@ -79,7 +79,7 @@ class GithubRepositoryType
 
     protected function useBranchForVersions(): bool
     {
-        return !empty($this->config['use_branch']);
+        return ! empty($this->config['use_branch']);
     }
 
     /**
@@ -106,14 +106,14 @@ class GithubRepositoryType
     {
         $version = $currentVersion ?: $this->getVersionInstalled();
 
-        if (!$version) {
+        if (! $version) {
             throw new InvalidArgumentException('No currently installed version specified.');
         }
 
         $versionAvailable = $this->getVersionAvailable();
 
         if (version_compare($version, $versionAvailable, '<')) {
-            if (!$this->versionFileExists()) {
+            if (! $this->versionFileExists()) {
                 $this->setVersionFile($versionAvailable);
             }
             event(new UpdateAvailable($versionAvailable));

@@ -90,7 +90,7 @@ final class GithubTagType extends GithubRepositoryType implements SourceReposito
                       ->updateStoragePath()
                       ->setDownloadUrl($release->zipball_url);
 
-        if (!$this->release->isSourceAlreadyFetched()) {
+        if (! $this->release->isSourceAlreadyFetched()) {
             $this->release->download($this->client);
             $this->release->extract();
         }
@@ -102,7 +102,7 @@ final class GithubTagType extends GithubRepositoryType implements SourceReposito
     {
         $release = $collection->first();
 
-        if (!empty($version)) {
+        if (! empty($version)) {
             if ($collection->contains('tag_name', $version)) {
                 $release = $collection->where('tag_name', $version)->first();
             } else {
