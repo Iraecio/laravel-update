@@ -91,14 +91,14 @@ class HttpRepositoryType implements SourceRepositoryTypeContract
     {
         $version = $currentVersion ?: $this->getVersionInstalled();
 
-        if (!$version) {
+        if (! $version) {
             throw new InvalidArgumentException('No currently installed version specified.');
         }
 
         $versionAvailable = $this->getVersionAvailable();
 
         if (version_compare($version, $versionAvailable, '<')) {
-            if (!$this->versionFileExists()) {
+            if (! $this->versionFileExists()) {
                 $this->setVersionFile($this->getVersionAvailable());
                 event(new UpdateAvailable($this->getVersionAvailable()));
             }
@@ -134,7 +134,7 @@ class HttpRepositoryType implements SourceRepositoryTypeContract
                       ->updateStoragePath()
                       ->setDownloadUrl($release->zipball_url);
 
-        if (!$this->release->isSourceAlreadyFetched()) {
+        if (! $this->release->isSourceAlreadyFetched()) {
             $this->release->download($this->client);
             $this->release->extract();
         }
@@ -152,7 +152,7 @@ class HttpRepositoryType implements SourceRepositoryTypeContract
     {
         $release = $collection->first();
 
-        if (!empty($version)) {
+        if (! empty($version)) {
             if ($collection->contains('name', $version)) {
                 $release = $collection->where('name', $version)->first();
             } else {
