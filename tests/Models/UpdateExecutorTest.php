@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Tests\Models;
 
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\File;
 use Iraecio\Updater\Events\UpdateFailed;
 use Iraecio\Updater\Events\UpdateSucceeded;
 use Iraecio\Updater\Models\Release;
 use Iraecio\Updater\Models\UpdateExecutor;
 use Iraecio\Updater\Tests\TestCase;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\File;
 use org\bovigo\vfs\vfsStream;
 
 class UpdateExecutorTest extends TestCase

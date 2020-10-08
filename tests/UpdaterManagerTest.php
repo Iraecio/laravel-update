@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Tests;
 
-use Iraecio\Updater\SourceRepository;
-use Iraecio\Updater\UpdaterManager;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
+use Iraecio\Updater\SourceRepository;
+use Iraecio\Updater\UpdaterManager;
 
 class UpdaterManagerTest extends Testcase
 {

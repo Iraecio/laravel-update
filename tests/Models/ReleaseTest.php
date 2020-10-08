@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Tests\Models;
 
+use Illuminate\Support\Str;
 use Iraecio\Updater\Models\Release;
 use Iraecio\Updater\Tests\TestCase;
-use Illuminate\Support\Str;
 use org\bovigo\vfs\vfsStream;
 
 class ReleaseTest extends TestCase

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Tests;
 
-use Iraecio\Updater\UpdaterFacade;
-use Iraecio\Updater\UpdaterServiceProvider;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
+use Iraecio\Updater\UpdaterFacade;
+use Iraecio\Updater\UpdaterServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra

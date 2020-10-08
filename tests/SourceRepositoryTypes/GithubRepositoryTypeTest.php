@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Iraecio\Updater\Tests\SourceRepositoryTypes;
 
+use Exception;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Event;
+use InvalidArgumentException;
 use Iraecio\Updater\Events\UpdateAvailable;
 use Iraecio\Updater\Events\UpdateSucceeded;
 use Iraecio\Updater\Models\Release;
@@ -11,10 +15,6 @@ use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryType;
 use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubBranchType;
 use Iraecio\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
 use Iraecio\Updater\Tests\TestCase;
-use Exception;
-use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Event;
-use InvalidArgumentException;
 
 class GithubRepositoryTypeTest extends TestCase
 {
