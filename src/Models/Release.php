@@ -102,7 +102,7 @@ final class Release
     {
         $this->storagePath = $storagePath;
 
-        if (!$this->filesystem->exists($this->storagePath)) {
+        if (! $this->filesystem->exists($this->storagePath)) {
             $this->filesystem->makeDirectory($this->storagePath, 493, true, true);
         }
 
@@ -116,7 +116,7 @@ final class Release
      */
     public function updateStoragePath(): self
     {
-        if (!empty($this->getRelease())) {
+        if (! empty($this->getRelease())) {
             $this->storagePath = Str::finish($this->storagePath, DIRECTORY_SEPARATOR).$this->getRelease();
 
             return $this;
@@ -261,7 +261,7 @@ final class Release
                 createFolderFromFile($this->getStoragePath()).now()->toDateString()
             );
 
-            if (!$moved) {
+            if (! $moved) {
                 return false;
             }
 
@@ -286,14 +286,14 @@ final class Release
         $extractionDir = createFolderFromFile($this->getStoragePath());
 
         // Check if source archive is (probably) deleted but extracted folder is there.
-        if (!$this->filesystem->exists($this->getStoragePath())
+        if (! $this->filesystem->exists($this->getStoragePath())
             && $this->filesystem->exists($extractionDir)) {
             return true;
         }
 
         // Check if source archive is there but not extracted
         if ($this->filesystem->exists($this->getStoragePath())
-            && !$this->filesystem->exists($extractionDir)) {
+            && ! $this->filesystem->exists($extractionDir)) {
             return true;
         }
 
